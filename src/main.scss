@@ -102,7 +102,36 @@ header::before {
     }
   }
 }
-      
+
+.container_search {
+  border: 1px solid rgb(243, 240, 240);
+  border-radius: 4px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  background: #4e5d74;
+}
+
+.box__search {
+  width: 100%;
+}
+
+.container label {
+  color: white;
+  font-size: .75rem;
+  font-weight: bold;
+}
+
+.container input {
+  border-radius: 4px;
+  height: 32px;
+  border: none;
+  margin-left: 10px;
+}
+
+/* MEDIA QUERY */
 @media screen and (max-width: 1588px) {
   .container {
     width: 85%;

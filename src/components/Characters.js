@@ -1,22 +1,14 @@
 import React, { useState, useEffect } from 'react';
 
-const Characters = () => {
-  //Estados
-  const [characters, setCharacters] = useState([])
+const Characters = ({characters, search}) => {
 
-  // Llamado a la API
-  useEffect( () => {
-    const url = "https://rickandmortyapi.com/api/character";
-    fetch(url)
-      .then(response => response.json())
-      .then(data => setCharacters(data.results))
-  }, [])
+  const filterCharacter = characters.filter((item) => (item.name.toLowerCase().includes(search.toLowerCase())))
 
   return ( 
     <div className="container">
       <div className="characters">
           {
-            characters.map( item => (
+            filterCharacter.map( item => (
               <div key={item.id} className="box">
                 <img src={item.image} alt={item.name} />
                 <div className="character">
